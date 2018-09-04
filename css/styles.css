@@ -203,7 +203,7 @@ h5 {
 ul.galleryUl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
+  grid-auto-rows: calc(100vh/3);
   grid-auto-flow: dense;
   z-index: 0;
   position: sticky;
