@@ -237,6 +237,15 @@
 
 </div>
 
+
+
+<!-- Libraries -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="lib/share-behavior.js"></script>
+
+
 <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -256,34 +265,77 @@
             }
         });
     }
-</script>
 
-<!-- Libraries -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="lib/jquery-2.1.4.min.js"></script>
-<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
-<script src="lib/share-behavior.js"></script>
+
+    var isInViewport = function (elem) {
+        var container_rect = $('.galleryUl')[0].getBoundingClientRect();
+
+        var bounding = elem.getBoundingClientRect();
+        return (
+                bounding.bottom <= container_rect.bottom &&
+                bounding.right <= container_rect.right
+
+        );
+    };
+
+    var poster = $('.imgContainer');
+    poster.each(function () {
+        for(i=0; i < poster.length; i++){
+            if (!isInViewport(poster[i])) {
+                $(poster[i]).attr("style", "display:none");
+            }
+        }
+    });
+
+
+    window.addEventListener("orientationchange", function() {
+        $('.imgContainer').attr("style", "display:block");
+        poster.each(function () {
+            for(i=0; i < poster.length; i++){
+                if (!isInViewport(poster[i])) {
+                    $(poster[i]).attr("style", "display:none");
+                }
+            }
+        });
+    }, false);
+
+    window.addEventListener("resize", function() {
+        $('.imgContainer').attr("style", "display:block");
+        poster.each(function () {
+            for(i=0; i < poster.length; i++){
+                if (!isInViewport(poster[i])) {
+                    $(poster[i]).attr("style", "display:none");
+                }
+            }
+        });
+    }, false);
+
+</script>
 
 <h3 class="read-text"><b>Читайте також:</b></h3>
 <div class="read-more" >
 
-
     <div class="read-more-third">
-        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/82121/Zombiakademija_vchenipensionery_NAN_Ukrajiny_ne_vytrymujut_konkurenciji"><img style="width:100%;"
-                                                                                                                                                                   src="img/zombi.png"
-                                                                                                                                                                   class="img-responsive" alt="Зомбі-академія"></a>
+        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/80283/Kinobum_V_Ukrajini_pochaly_znimaty_normalni_filmy"><img style="width:100%;"
+                                                                                                                                             src="img/kinobum.png"
+                                                                                                                                             class="img-responsive" alt="В Україні почали знімати нормальні фільми"></a>
     </div>
-    <div class="read-more-second">
-        <a target="_blank" href="http://texty.org.ua/pg/article/Oximets/read/83231/Jera_dynozavriv_Popry_kolyshni_dosagnenna_Instytut_kibernetyky?a_srt=1"><img style="width:100%;" src="img/kibernetika.png"
-                                                                                                                                                                class="img-responsive"
-                                                                                                                                                                alt="Ера динозаврів"></a>
-    </div>
+
     <div class="read-more-first">
-        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/84562/Jak_SShA_ta_Polshha_pidtrymujut_jakisnu_nauku"><img style="width:100%;"
-                                                                                                                                         src="img/foreign.png"
-                                                                                                                                         class="img-responsive"
-                                                                                                                                         alt="Досвід США Польщі"></a>
+        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/81514/Pro_Ukrajinu_i_vijnu_Kiborgy__najkrashhyj"><img style="width:100%;"
+                                                                                                                                     src="img/kiborgy.png"
+                                                                                                                                     class="img-responsive"
+                                                                                                                                     alt="Кіборги.Про Україні"></a>
     </div>
+
+
+
+    <div class="read-more-second">
+        <a target="_blank" href="http://texty.org.ua/pg/article/Oximets/read/73466/Najkrashhyj_patriotychnyj_film__ce_vdala_komedija"><img style="width:100%;" src="img/illenko.png"
+                                                                                                                                                                class="img-responsive"
+                                                                                                                                                                alt="Виступ Іллєнко"></a>
+    </div>
+
 </div>
 
 
