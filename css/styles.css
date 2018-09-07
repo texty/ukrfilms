@@ -5,24 +5,32 @@
 
 .logo {
   width: 150px;
-  grid-column: 1/2; }
+  grid-column: 1/2;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 1000; }
 
 .social-icons {
   grid-column: 3/4;
   display: grid;
   grid-template-columns: 40px 40px;
+  grid-template-rows: 40px;
   position: fixed;
   right: 5px;
-  top: 5px; }
+  top: 5px;
+  z-index: 1000; }
 
 .facebook {
   width: 30px;
   margin-right: 10px;
-  grid-column: 1/2; }
+  grid-column: 1/2;
+  grid-row: 1/2; }
 
 .twitter {
   width: 30px;
-  grid-column: 2/3; }
+  grid-column: 2/3;
+  grid-row: 1/2; }
 
 a {
   color: white; }
@@ -158,9 +166,10 @@ body {
   background: rgba(0, 0, 0, 0.8);
   margin: 0 auto;
   z-index: 100;
-  position: relative;
+  position: absolute;
+  top: 50vh;
   width: 100vw;
-  height: 66.6vh;
+  height: 50vh;
   color: white; }
 
 h1 {
@@ -170,13 +179,16 @@ h1 {
       font-size: 36px; } }
 
 h1 span {
-  font-size: 67px;
+  font-size: 36px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
   @media (max-width: 700px) {
     h1 span {
       font-size: 36px; } }
+  @media (min-width: 1000px) {
+    h1 span {
+      font-size: 70px; } }
 
 p {
   line-height: 1.6; }
@@ -204,8 +216,6 @@ ul.galleryUl {
   grid-auto-rows: calc(100vh/3);
   grid-auto-flow: dense;
   z-index: 0;
-  position: sticky;
-  top: 0;
   left: 0;
   margin: 0;
   padding: 0; }
@@ -281,18 +291,6 @@ img.charts_100 {
   grid-column: span 3;
   grid-row: span 2; }
 
-.accordion {
-  background-color: #eee;
-  color: black;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  margin-bottom: 5px; }
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
   background-color: #ccc; }
@@ -303,5 +301,10 @@ img.charts_100 {
   background-color: #111612;
   display: none;
   overflow: hidden; }
+
+#dovidky {
+  padding: 10px;
+  margin-top: 100px;
+  background-color: #202221; }
 
 /*# sourceMappingURL=styles.css.map */
