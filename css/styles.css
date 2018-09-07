@@ -164,31 +164,33 @@ body {
 
 #title {
   background: rgba(0, 0, 0, 0.8);
-  margin: 0 auto;
   z-index: 100;
   position: absolute;
-  top: 50vh;
   width: 100vw;
-  height: 50vh;
-  color: white; }
+  height: 30vh;
+  top: 70vh;
+  color: white;
+  text-align: center; }
+  @media (max-width: 700px) {
+    #title {
+      height: 30vh;
+      top: 70vh; } }
 
 h1 {
-  text-align: center; }
+  width: 80vw;
+  margin: 0 auto; }
   @media (max-width: 700px) {
     h1 {
       font-size: 36px; } }
 
 h1 span {
-  font-size: 36px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  font-size: 36px; }
   @media (max-width: 700px) {
     h1 span {
       font-size: 36px; } }
   @media (min-width: 1000px) {
     h1 span {
-      font-size: 70px; } }
+      font-size: 60px; } }
 
 p {
   line-height: 1.6; }
@@ -216,6 +218,8 @@ ul.galleryUl {
   grid-auto-rows: calc(100vh/3);
   grid-auto-flow: dense;
   z-index: 0;
+  position: sticky;
+  top: 0;
   left: 0;
   margin: 0;
   padding: 0; }
@@ -268,6 +272,14 @@ img.charts_100 {
     img.charts_100 {
       width: 96%;
       margin: 30px 2% 30px 2%; } }
+
+@media (max-width: 800px) {
+  #mobileHide {
+    display: none; } }
+
+@media (min-width: 801px) {
+  #desktopHide {
+    display: none; } }
 
 .iPadVisible {
   display: none; }
