@@ -173,19 +173,25 @@ body {
   text-align: center; }
   @media (max-width: 700px) {
     #title {
-      height: 30vh;
-      top: 70vh; } }
+      height: 33vh;
+      top: 67vh; } }
+  @media only screen and (max-width: 850px) and (orientation: landscape) {
+    #title {
+      height: 60vh;
+      top: 40vh; } }
 
 h1 {
   width: 80vw;
   margin: 20px auto 0 auto; }
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     h1 {
-      font-size: 36px; } }
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 15px auto 0 auto; } }
 
 h1 span {
   font-size: 36px; }
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     h1 span {
       font-size: 36px; } }
   @media (min-width: 1000px) {
@@ -273,11 +279,11 @@ img.charts_100 {
       width: 96%;
       margin: 30px 2% 30px 2%; } }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   #mobileHide {
     display: none; } }
 
-@media (min-width: 801px) {
+@media (min-width: 601px) {
   #desktopHide {
     display: none; } }
 
